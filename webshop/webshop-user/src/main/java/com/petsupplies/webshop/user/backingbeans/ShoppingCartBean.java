@@ -218,7 +218,7 @@ public class ShoppingCartBean implements Serializable
 
    public String getShowViewCartLink()
    {
-      if (null != itemsMap && itemsMap.isEmpty())
+      if (null != itemsMap && !itemsMap.isEmpty())
       {
          return "true";
       }

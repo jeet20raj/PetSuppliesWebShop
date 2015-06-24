@@ -53,7 +53,7 @@ public class ProductSearchManager
    private String categoryName;
 
    private String productName;
-   
+
    private String productDescription;
 
    /**
@@ -78,9 +78,7 @@ public class ProductSearchManager
    {
       logger.log(Level.INFO, "ProductSearchManager :: getAllProducts starts");
       ProductSearchFilter productSearchFilter = new ProductSearchFilter();
-      productSearchFilter.setCategoryName("".equals(getCategoryName()) ? null : getCategoryName());
-      productSearchFilter.setProductName("".equals(getProductName()) ? null : getProductName());
-      productSearchFilter.setDescription("".equals(getProductDescription()) ? null:getProductDescription());
+      prepareSearchFilter(productSearchFilter);
       productsList = productSessionService.getProducts(productSearchFilter);
       List<ProductVO> products = new ArrayList<ProductVO>();
       makeProductVOList(productsList, products);
@@ -158,7 +156,6 @@ public class ProductSearchManager
       this.productName = productName;
    }
 
-   
    public String getProductDescription()
    {
       return productDescription;
@@ -185,6 +182,21 @@ public class ProductSearchManager
       {
          ProductVO productVO = new ProductVO(productEntity);
          productVOs.add(productVO);
+      }
+   }
+
+   private void prepareSearchFilter(ProductSearchFilter productSearchFilter)
+   {
+      productSearchFilter.setCategoryName("".equals(getCategoryName()) ? null : getCategoryName());
+      if(null != getProductName() && !"".equals(getProductName())){
+         productSearchFilter.setProductName("%"+getProductName()+"%");
+      }else{
+         productSearchFilter.setProductName(null);
+      }
+      if(null != getProductDescription() && !"".equals(getProductDescription())){
+         productSearchFilter.setDescription("%"+getProductDescription()+"%");
+      }else{
+         productSearchFilter.setDescription(null);
       }
    }
 }
