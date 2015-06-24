@@ -1,0 +1,82 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<h:form>
+			<h:messages styleClass="error" style="color:red;margin:8px;" />
+			<table>
+				<tr>
+					<td><p:panel id="panel" header="User Details"
+							style="margin-bottom:10px;">
+							<h:panelGrid columns="3">
+								<h:outputLabel for="username"
+									value="#{message['webshop.username']}" />
+								<p:inputText id="username" value="#{userEntity.userName}" />
+								<p:message for="username" />
+
+								<h:outputLabel for="firstName"
+									value="#{message['webshop.firstname']}" />
+								<p:inputText id="firstName" value="#{userEntity.firstName}" />
+								<p:message for="firstName" />
+
+								<h:outputLabel for="lastName"
+									value="#{message['webshop.lastname']}" />
+								<p:inputText id="lastName" value="#{userEntity.lastName}" />
+								<p:message for="lastName" />
+
+								<h:outputLabel for="password"
+									value="#{message['webshop.password']}" />
+								<p:password id="password" value="#{userEntity.password}" />
+								<p:message for="password" />
+
+								<h:outputLabel for="confirmPassword"
+									value="#{message['webshop.confirmpassword']}" />
+								<p:password id="confirmPassword"
+									value="#{userEntity.confirmPassword}" />
+								<p:message for="confirmPassword" />
+							</h:panelGrid>
+						</p:panel></td>
+					<td><p:panel id="panel_address" header="User Address Screen"
+							style="margin-bottom:10px;padding-left:20px;">
+							<h:panelGrid columns="3">
+								<h:outputLabel for="addressline1"
+									value="#{message['webshop.addressline1']}" />
+								<p:inputText id="addressline1" value="#{addressEntity.addressLine1}" />
+								<p:message for="addressline1" />
+
+								<h:outputLabel for="addressline2"
+									value="#{message['webshop.addressline2']}" />
+								<p:inputText id="addressline2" value="#{addressEntity.addressLine2}" />
+								<p:message for="addressline2" />
+
+								<h:outputLabel for="city"
+									value="#{message['webshop.addr.city']}" />
+								<p:inputText id="city" value="#{addressEntity.city}" />
+								<p:message for="city" />
+
+								<h:outputLabel for="state"
+									value="#{message['webshop.addr.state']}" />
+								<p:inputText id="state" value="#{addressEntity.state}" />
+								<p:message for="state" />
+
+								<h:outputLabel for="zipcode"
+									value="#{message['webshop.addr.zopcode']}" />
+								<p:inputText id="zipcode"
+									value="#{addressEntity.zipCode}" />
+								<p:message for="zipcode" />
+								<h:outputLabel for="country"
+									value="#{message['webshop.addr.country']}" />
+								<p:inputText id="country" value="#{addressEntity.country}" />
+								<p:message for="country" />
+							</h:panelGrid>
+						</p:panel></td>
+				</tr>
+			</table>
+			<p:commandButton action="#{userBean.createUser}"
+				value="#{message['webshop.adduser']}" ajax="false" />
+		</h:form>
+	</ui:define>
+</ui:composition>

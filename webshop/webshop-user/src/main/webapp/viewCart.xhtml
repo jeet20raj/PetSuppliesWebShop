@@ -1,0 +1,66 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="userHomeDiv">
+			<table class="userHome">
+				<tr>
+					<td><h:form styleClass="viewCartDetails" id="form">
+							<p:panel id="productResultsPanel" header="Cart Details">
+								<p:growl id="productResults" showDetail="true" />
+								<p:dataTable var="item" value="#{shoppingCartBean.cartItems}"
+									rowKey="#{item.productId}" editable="true" id="productResultsDataTable">
+									<f:facet name="header">#{message['webshop.msg.cartitems']}</f:facet>
+
+									<p:ajax event="rowEdit"
+										listener="#{shoppingCartBean.updatePrice}"
+										update=":form:productResults" />
+									<p:ajax event="rowEditCancel"
+										listener="#{shoppingCartBean.onRowCancel}"
+										update=":form:productResults" />
+
+									<p:column headerText="#{message['webshop.msg.prdname']}">
+										<h:outputText value="#{item.productName}" />
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.quantity']}">
+
+										<p:cellEditor>
+											<f:facet name="output">
+												<h:outputText value="#{item.quantity}" />
+											</f:facet>
+											<f:facet name="input">
+												<p:inputText value="#{item.quantity}" />
+											</f:facet>
+										</p:cellEditor>
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.prdfinalprice']}">
+										<h:outputText id="totalPrice" value="#{item.totalPrice}" />
+									</p:column>
+									<p:column style="width:32px">
+										<p:rowEditor />
+									</p:column>
+									<p:column>
+										<f:facet name="header">
+											<h:outputText value="" />
+										</f:facet>
+										<p:commandButton styleClass="deleteCartItem" icon="ui-icon-trash" title="remove from cart"
+											actionListener="#{shoppingCartBean.removeItem(item)}" update=":form:productResultsDataTable" />
+									</p:column>
+								</p:dataTable>
+								<br />
+								<f:facet name="footer">
+									<p:commandButton value="#{message['webshop.msg.checkout']}"
+										action="#{shoppingCartBean.checkOut}" ajax="false" />
+								</f:facet>
+							</p:panel>
+						</h:form></td>
+				</tr>
+			</table>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="template.xhtml">
+	<ui:define name="content">
+		<h:form id="loginForm" style="padding-left: 100px;">
+			<h:messages styleClass="error" style="color:red;margin:8px;" />
+			<p:panel id="panel" header="User Login"
+				style="margin-bottom:10px;width:400px;">
+				<h:panelGrid>
+					<h:outputLabel for="username" value="Enter username:" />
+					<p:inputText id="username" value="#{loginForm.userName}"
+						required="true">
+					</p:inputText>
+					<p:message for="username" />
+					<h:outputLabel for="password" value="Enter password:*" />
+					<p:password id="password" value="#{loginForm.password}"
+						required="true" />
+					<p:message for="password" />
+				</h:panelGrid>
+			</p:panel>
+			<p:commandButton id="login" value="Login" action="#{loginBean.login}"
+				ajax="false" />
+		</h:form>
+		<br />
+	</ui:define>
+</ui:composition>
+</html>
+

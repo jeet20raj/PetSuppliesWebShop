@@ -1,0 +1,94 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="userHomeDiv">
+			<table class="userHome">
+				<tr>
+					<td></td>
+					<td><h:panelGroup
+							rendered="#{not empty shoppingCartBean.showViewCartLink}">
+							<h:form>
+								<h:commandLink id="viewCart"
+									value="#{message['webshop.msg.viewcart']}"
+									action="#{shoppingCartBean.viewShoppingCartDetails}"
+									styleClass="cartCommandLink" />
+							</h:form>
+						</h:panelGroup></td>
+
+				</tr>
+				<tr>
+					<td><h:form>
+							<p:panel id="searchPanel" header="Product Search"
+								style="margin-bottom:10px;">
+								<h:panelGrid columns="3">
+									<h:outputLabel for="categoryName" value="#{message['webshop.categoryname']}" />
+									<p:selectOneMenu id="categoryName"
+										value="#{productSearchManager.categoryName}">
+										<f:selectItem itemLabel="Select category" itemValue="#{null}"></f:selectItem>
+										<f:selectItems value="#{productSearchManager.categoriesList}"
+											var="category" itemLabel="#{category.categoryName}"
+											itemValue="#{category.categoryName}" />
+									</p:selectOneMenu>
+									<p:message for="categoryName" />
+
+									<h:outputLabel for="productName" value="#{message['webshop.msg.prdname']}" />
+									<p:inputText id="productName"
+										value="#{productSearchManager.productName}" />
+									<p:message for="productName" />
+									
+									<h:outputLabel for="productDescription" value="#{message['webshop.msg.prddescription']}" />
+									<p:inputText id="productDescription"
+										value="#{productSearchManager.productDescription}" />
+									<p:message for="productDescription" />
+									
+									<p:commandButton id="search" value="Search"
+										action="#{productSearchManager.getProducts}" ajax="false" />
+								</h:panelGrid>
+							</p:panel>
+						</h:form></td>
+					<td><h:form styleClass="productsListForm">
+							<p:panel id="productResults" styleClass="productsListPanel"
+								header="Search Results">
+								<p:dataTable var="product" value="#{productsHolder.products}"
+									rowKey="#{product.productEntity.productName}"
+									selection="#{shoppingCartBean.selectedProducts}"
+									styleClass="shoppingCartsProductPanel">
+
+									<f:facet name="header">#{message['webshop.productslist']}</f:facet>
+									<p:column selectionMode="multiple" />
+									<p:column headerText="#{message['webshop.msg.prdname']}">
+										<h:outputText value="#{product.productEntity.productName}" />
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.prddescription']}">
+										<h:outputText value="#{product.productEntity.description}" />
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.prdprice']}">
+										<h:outputText value="#{product.productEntity.price}" />
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.prddiscount']}(%)">
+										<h:outputText value="#{product.productEntity.discount}" />
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.prdfinalprice']}">
+										<h:outputText value="#{product.productEntity.discountedPrice}" />
+									</p:column>
+									<f:facet name="footer">
+										<p:commandButton id="Addtocart"
+											value="#{message['webshop.msg.addtocart']}"
+											action="#{shoppingCartBean.addToCart}" ajax="false" />
+									</f:facet>
+								</p:dataTable>
+							</p:panel>
+						</h:form></td>
+				</tr>
+			</table>
+		</div>
+	</ui:define>
+</ui:composition>

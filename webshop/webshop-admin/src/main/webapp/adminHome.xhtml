@@ -1,0 +1,39 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<ui:define name="content">
+		<div class="adminHomeDiv">
+			<h:form>
+				<table class="adminHome">
+					<tbody>
+						<tr>
+							<td></td>
+							<td><h:commandLink id="Link1"
+									value="#{message['webshop.showallcategories']}"
+									action="#{categoryBean.getAllCategories}" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><h:commandLink id="Link2"
+									value="#{message['webshop.showallproducts']}"
+									action="#{productBean.showAllProducts}" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><h:link outcome="/addCategory.xhtml"
+									value="#{message['webshop.addcategory']}" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><h:commandLink id="addProduct"
+									value="#{message['webshop.addproduct']}"
+									action="#{productBean.showProductPage}" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>

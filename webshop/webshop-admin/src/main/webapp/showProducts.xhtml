@@ -1,0 +1,57 @@
+<ui:composition template="template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<!-- <h:link outcome="addProduct.xhtml" value="Add Product" /> -->
+		<h:form>
+		<h:messages styleClass="error" style="color:red;margin:8px;"/>
+			<p:dataTable var="product" value="#{productsHolder.products}"
+				rowKey="#{product.productEntity.productName}"
+				selection="#{productBean.selectedProductVO}"
+				>
+
+				<f:facet name="header">#{message['webshop.productslist']}</f:facet>
+
+				<p:column event="rowSelect" />
+				<p:column selectionMode="single" />
+
+				<p:column headerText="#{message['webshop.msg.prdname']}">
+					<h:outputText value="#{product.productEntity.productName}" />
+				</p:column>
+
+				<p:column headerText="#{message['webshop.msg.prdcategory']}">
+					<h:outputText value="#{product.productEntity.categoryEntity.categoryName}" />
+				</p:column>
+
+				<p:column headerText="#{message['webshop.msg.prdbrand']}">
+					<h:outputText value="#{product.productEntity.brand}" />
+				</p:column>
+
+				<p:column headerText="#{message['webshop.msg.prdprice']}">
+					<h:outputText value="#{product.productEntity.price}" />
+				</p:column>
+
+				<p:column headerText="#{message['webshop.msg.prddiscount']}">
+					<h:outputText value="#{product.productEntity.discount}" />
+				</p:column>
+
+				<f:facet name="footer">
+					<p:commandButton id="editProduct"
+						value="#{message['webshop.editProduct']}"
+						action="#{productBean.showPordEditPage}" ajax="false" /> 
+						<p:commandButton id="deleteProduct"
+						value="#{message['webshop.deleteProduct']}"
+						action="#{productBean.deleteProduct}" ajax="false" /> 
+				</f:facet>
+			</p:dataTable>
+		</h:form>
+
+		<h:form style="padding-left: 100px; padding-top: 10px;">
+			<p:commandButton id="addProduct"
+				value="#{message['webshop.addproduct']}"
+				action="#{productBean.showProductPage}" ajax="false"/>
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,54 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+		<ui:define name="content">
+			<h:messages />
+			<h:form>
+				<p:panel id="panel" header="Product Screen"
+					style="margin-bottom:10px;">
+					<h:panelGrid columns="3">
+						<h:outputLabel for="productName"
+							value="#{message['webshop.enterproduct']}" />
+						<p:inputText id="productName" value="#{productEntity.productName}" />
+						<p:message for="productName" />
+
+						<h:outputLabel for="categoryId"
+							value="#{message['webshop.selectcategory']}" />
+						<p:selectOneMenu id="categoryId" value="#{productBean.categoryId}">
+							<f:selectItems value="#{productBean.productCategories}"
+								var="category" itemLabel="#{category.categoryName}"
+								itemValue="#{category.categoryId}" />
+						</p:selectOneMenu>
+						<p:message for="categoryId" />
+
+						<h:outputLabel for="brand" value="#{message['webshop.brand']}" />
+						<p:inputText id="brand" value="#{productEntity.brand}" />
+						<p:message for="brand" />
+
+
+						<h:outputLabel for="price" value="#{message['webshop.price']}" />
+						<p:inputText id="price" value="#{productEntity.price}" />
+						<p:message for="price" />
+
+						<h:outputLabel for="discount"
+							value="#{message['webshop.discount']}" />
+						<h:inputText id="discount" value="#{productEntity.discount}" />
+						<p:message for="discount" />
+
+						<h:outputLabel for="description"
+							value="#{message['webshop.description']}" />
+						<p:inputTextarea id="description"
+							value="#{productEntity.description}" />
+						<p:message for="description" />
+					</h:panelGrid>
+				</p:panel>
+
+				<p:commandButton action="#{productBean.editProduct}"
+					value="#{message['webshop.edit.product']}" />
+
+			</h:form>
+		</ui:define>
+</ui:composition>

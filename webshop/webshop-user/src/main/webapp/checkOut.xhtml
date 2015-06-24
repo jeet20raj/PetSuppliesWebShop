@@ -1,0 +1,84 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="userHomeDiv">
+			<table class="userHome">
+				<tr>
+					<td class="viewCartsTD"><h:form>
+							<p:panel id="productResults" header="Cart Details"
+								styleClass="checkOutCartDetailsPanel">
+								<p:dataTable var="item" value="#{shoppingCartBean.cartItems}"
+									styleClass="checkOutCartDetailsData" rowKey="#{item.productId}">
+									<f:facet name="header">#{message['webshop.msg.cartitems']}</f:facet>
+									<p:column headerText="#{message['webshop.msg.prdname']}">
+										<h:outputText value="#{item.productName}" />
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.quantity']}">
+										<h:outputText value="#{item.quantity}" />
+									</p:column>
+
+									<p:column headerText="#{message['webshop.msg.prdfinalprice']}">
+										<h:outputText value="#{item.totalPrice}" />
+									</p:column>
+									<f:facet name="footer">
+										<h:outputText
+											value="#{message['webshop.msg.totalorderprice']} " />
+										<h:outputText value="#{shoppingCartBean.orderTotalPrice}" />
+									</f:facet>
+								</p:dataTable>
+								<br />
+							</p:panel>
+						</h:form></td>
+
+					<td><h:form styleClass="shippingAddressForm">
+							<p:panel id="panel_address"
+								header="#{message['webshop.msg.shippingaddr']}"
+								styleClass="shippingAddressPanel">
+								<h:panelGrid columns="3">
+									<h:outputLabel for="addressline1"
+										value="#{message['webshop.addressline1']}" />
+									<p:inputText id="addressline1"
+										value="#{shippingAddress.addressLine1}" />
+									<p:message for="addressline1" />
+
+									<h:outputLabel for="addressline2"
+										value="#{message['webshop.addressline2']}" />
+									<p:inputText id="addressline2"
+										value="#{shippingAddress.addressLine2}" />
+									<p:message for="addressline2" />
+
+									<h:outputLabel for="city"
+										value="#{message['webshop.addr.city']}" />
+									<p:inputText id="city" value="#{shippingAddress.city}" />
+									<p:message for="city" />
+
+									<h:outputLabel for="state"
+										value="#{message['webshop.addr.state']}" />
+									<p:inputText id="state" value="#{shippingAddress.state}" />
+									<p:message for="state" />
+
+									<h:outputLabel for="zipcode"
+										value="#{message['webshop.addr.zopcode']}" />
+									<p:inputText id="zipcode" value="#{shippingAddress.zipCode}" />
+									<p:message for="zipcode" />
+									<h:outputLabel for="country"
+										value="#{message['webshop.addr.country']}" />
+									<p:inputText id="country" value="#{shippingAddress.country}" />
+									<p:message for="country" />
+									<f:facet name="footer">
+										<p:commandButton value="#{message['webshop.msg.placeorder']}"
+											action="#{shoppingCartBean.placeOrder}" />
+									</f:facet>
+								</h:panelGrid>
+							</p:panel>
+						</h:form></td>
+				</tr>
+			</table>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,34 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<h:form>
+			<h:messages styleClass="error" style="color:red;margin:8px;" />
+			<p:dataTable var="category" value="#{categoriesHolder.categoryVOs}"
+				rowKey="#{category.categoryEntity.categoryName}"
+				selection="#{categoryBean.selectedCategoryVO}">
+				<f:facet name="header">#{message['webshop.categorieslist']}</f:facet>
+
+				<p:column event="rowSelect" />
+				<p:column selectionMode="single" />
+
+				<p:column headerText="#{message['webshop.categoryname']}">
+					<h:outputText value="#{category.categoryEntity.categoryName}" />
+				</p:column>
+
+				<p:column headerText="#{message['webshop.description']}">
+					<h:outputText value="#{category.categoryEntity.description }" />
+				</p:column>
+
+				<f:facet name="footer">
+					<p:commandButton id="deleteCategory"
+						value="#{message['webshop.deleteCategory']}"
+						action="#{categoryBean.deleteCategory}" ajax="false" />
+				</f:facet>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

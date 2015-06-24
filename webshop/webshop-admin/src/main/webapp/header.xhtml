@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<body>
+	<ui:composition>
+		<div class="headerClass">
+			<table class="header">
+				<tbody>
+					<tr>
+						<td align="center"><h1>
+								<!-- Welcome to pet supplies store -->
+								Welcome to Pet Supplies Shop
+							</h1></td>
+						<td style="padding-left: 10px;"><div class="loginDiv">
+								<h:form>
+									<h:panelGroup
+										rendered="#{not empty sessionScope.userLogedIn.firstName}">
+   									Welcome <h:outputText
+											value="#{sessionScope.userLogedIn.firstName}" />
+										&nbsp;&nbsp;
+									 <h:link outcome="/adminHome.xhtml"
+											value="#{message['webshop.adminHome']}" />
+										&nbsp;&nbsp;
+										<h:commandLink id="logout"
+											value="#{message['webshop.logout']}"
+											action="#{loginBean.logout}" />
+									</h:panelGroup>
+									<h:panelGroup
+										rendered="#{empty sessionScope.userLogedIn.firstName}">
+										<h:link outcome="registration.xhtml"
+											value="#{message['webshop.signup']}" />&nbsp;&nbsp;
+									 <h:link outcome="/login.xhtml"
+											value="#{message['webshop.login']}" />
+									</h:panelGroup>
+								</h:form>
+							</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</ui:composition>
+</body>
+</html>

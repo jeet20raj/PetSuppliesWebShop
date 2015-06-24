@@ -1,0 +1,96 @@
+div.headerClass {
+	background-color: #A9D0F5;
+}
+
+div.footerClass {
+	position: absolute;
+	bottom: 0;
+	height: 3px;
+	background-color: #A9D0F5;
+	width: 100%;
+}
+
+div.contentClass {
+	background-color: #81F7F3;
+	height: 510px;
+}
+
+table.footer {
+	width: 100%;
+}
+
+table.header {
+	width: 100%;
+}
+
+table.userHome {
+	padding-top: 30px;
+}
+
+h1.footer {
+	align: center;
+}
+
+div.userHomeDiv {
+	padding-top: 30px;
+}
+
+div.loginDiv {
+	float: right;
+}
+
+td.loginPanel {
+	padding-left: 10px;
+}
+/* .ui-datatable{
+	width: 800px;padding-left: 100px;padding-top: 10px;
+} */
+.shoppingCartsProductPanel {
+	width: 800px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.productsListPanel {
+	margin-bottom: 10px;
+	padding-left: 20px;
+}
+
+.productsListForm {
+	padding-top: 30px;
+	padding-left: 20px;
+}
+
+.cartCommandLink {
+	padding-right: 10px;
+	padding-bottom: 10px;
+	float: right;
+}
+
+.shippingAddressPanel {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 20px;
+	margin-bottom: 10px;
+}
+
+.checkOutCartDetails {
+	width: 550px;
+}
+
+.checkOutCartDetailsData {
+	width: 530px;
+}
+
+.shippingAddressForm {
+	padding-left: 100px;
+}
+
+.viewCartsTD {
+	vertical-align: top;
+}
+
+.deleteCartItem {
+	width: 12px;
+	height: 14px;
+}

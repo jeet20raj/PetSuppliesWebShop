@@ -1,0 +1,58 @@
+<ui:composition template="template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+		<h:form enctype="multipart/form-data">
+			<p:panel id="panel" header="Add Product Screen"
+				style="margin-bottom:10px;">
+				<h:panelGrid columns="3">
+					<h:outputLabel for="productName"
+						value="#{message['webshop.enterproduct']}" />
+					<p:inputText id="productName" value="#{productEntity.productName}" required="true"/>
+					<p:message for="productName" />
+
+					<h:outputLabel for="categoryId"
+						value="#{message['webshop.selectcategory']}" />
+					<p:selectOneMenu id="categoryId" value="#{productBean.categoryId}" required="true">
+					    <f:selectItem itemLabel="Select category" itemValue="#{null}"></f:selectItem>
+						<f:selectItems value="#{productBean.productCategories}"
+							var="category" itemLabel="#{category.categoryName}"
+							itemValue="#{category.categoryId}" />
+					</p:selectOneMenu>
+					<p:message for="categoryId" />
+
+					<h:outputLabel for="brand" value="#{message['webshop.brand']}" />
+					<p:inputText id="brand" value="#{productEntity.brand}" />
+					<p:message for="brand" />
+
+
+					<h:outputLabel for="price" value="#{message['webshop.price']}" />
+					<p:inputText id="price" value="#{productEntity.price}" />
+					<p:message for="price" />
+
+					<h:outputLabel for="discount"
+						value="#{message['webshop.discount']}" />
+					<p:inputText id="discount" value="#{productEntity.discount}" />
+					<p:message for="discount" />
+
+					<h:outputLabel for="description"
+						value="#{message['webshop.description']}" />
+					<p:inputTextarea id="description"
+						value="#{productEntity.description}" />
+					<p:message for="description" />
+					<h:outputLabel for="imageId"
+						value="#{message['webshop.description']}" />
+					<p:fileUpload id="imageId" value="#{productBean.productImage}"
+						showButtons="false" mode="simple" />
+					<p:message for="imageId" />
+				</h:panelGrid>
+			</p:panel>
+			<p:commandButton action="#{productBean.createProduct}"
+				value="#{message['webshop.addproduct']}" ajax="false" />
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,35 @@
+<ui:composition template="template.xhtml"  xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+        <h:form>
+        <h:messages styleClass="error" style="color:red;margin:8px;"/>
+        <p:panel id="panel" header="User Registration Screen" style="margin-bottom:10px;">
+            <h:panelGrid columns="3">
+                <h:outputLabel for="username" value="#{message['webshop.username']}"/>
+                <p:inputText id="username" value="#{userEntity.userName}" />
+                <p:message for="username" />
+
+                <h:outputLabel for="firstName" value="#{message['webshop.firstname']}"/>
+                <p:inputText id="firstName" value="#{userEntity.firstName}" />
+                <p:message for="firstName" />
+
+                <h:outputLabel for="lastName" value="#{message['webshop.lastname']}"/>
+                <p:inputText id="lastName" value="#{userEntity.lastName}" />
+                <p:message for="lastName" />
+                
+                <h:outputLabel for="password" value="#{message['webshop.password']}"/>
+                <p:password id="password" value="#{userEntity.password}" />
+                <p:message for="password" />
+                
+                <h:outputLabel for="confirmPassword" value="#{message['webshop.confirmpassword']}"/>
+                <p:password id="confirmPassword" value="#{userEntity.confirmPassword}" />
+                <p:message for="confirmPassword" />
+            </h:panelGrid>
+            </p:panel>
+            <p:commandButton action="#{userBean.createUser}"
+                value="#{message['webshop.adduser']}" ajax="false"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
