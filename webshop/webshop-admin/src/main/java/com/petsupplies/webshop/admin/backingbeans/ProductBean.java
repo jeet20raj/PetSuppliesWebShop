@@ -77,8 +77,6 @@ public class ProductBean implements Serializable
 
    private ProductVO selectedProductVO;
 
-   private UploadedFile uploadedFile;
-
    /**
     * Capture product details from product screen and create new product
     * 

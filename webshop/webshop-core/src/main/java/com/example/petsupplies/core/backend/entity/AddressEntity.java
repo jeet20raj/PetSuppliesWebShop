@@ -57,12 +57,6 @@ public class AddressEntity extends AbstractJPAEntity
       this.addressId = addressId;
    }
 
-   //@Column(name = "user_id")
-   // @JoinColumn(/*name = "user_id"*/referencedColumnName="user")
-   //@JoinTable(name = "webshop_users", joinColumns = { @JoinColumn(name = "user_id", referencedColumnName = "user_id") })
-   /*
-    * public Long getUserId() { return userId; } public void setUserId(Long userId) { this.userId = userId; }
-    */
    @ManyToOne(fetch = FetchType.EAGER)
    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
    public UserEntity getUserEntity()
