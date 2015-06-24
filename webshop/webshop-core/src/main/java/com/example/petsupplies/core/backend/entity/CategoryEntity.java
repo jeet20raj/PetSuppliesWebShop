@@ -12,7 +12,10 @@ import javax.persistence.Table;
 import com.example.petsupplies.core.common.constants.Constants;
 
 /**
- * @author Jeetendra CategoryEntity is used to define all attributes related product categories.
+ * CategoryEntity is used to define all attributes related product categories.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-09
  */
 
 @SuppressWarnings("serial")

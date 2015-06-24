@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
  * ResourceProducer is used to produces Entity Manager and Logger so that those can be injected by other classes.
  * @author Jeetendra
  * @version 1.0
- * @since 2015-06-14
+ * @since 2015-06-12
  */
 
 public class ResourceProducer

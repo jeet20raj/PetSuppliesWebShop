@@ -14,7 +14,10 @@ import com.example.petsupplies.core.common.constants.Constants;
 import com.example.petsupplies.core.exceptions.WebshopException;
 
 /**
- * @author Jeetendra UserDAOImpl is used to search user in DB and create user.
+ * UserDAOImpl is used to search user in DB and create user.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-12
  */
 public class UserDAOImpl extends BaseDAO implements UserDAO
 {

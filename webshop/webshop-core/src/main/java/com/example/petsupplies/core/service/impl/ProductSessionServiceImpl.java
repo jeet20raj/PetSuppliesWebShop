@@ -10,7 +10,12 @@ import com.example.petsupplies.core.backend.dao.ProductDAO;
 import com.example.petsupplies.core.backend.entity.ProductEntity;
 import com.example.petsupplies.core.model.ProductSearchFilter;
 import com.example.petsupplies.core.service.ProductSessionService;
-
+/**
+ * ProductSessionServiceImpl is used to add/edit/display the products.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-12
+ */
 @Stateless
 public class ProductSessionServiceImpl implements ProductSessionService, Serializable
 {

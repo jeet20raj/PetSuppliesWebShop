@@ -9,7 +9,10 @@ import com.example.petsupplies.core.backend.dao.PurchaseOrderDAO;
 import com.example.petsupplies.core.backend.entity.OrderEntity;
 
 /**
- * @author Jeetendra PurchaseOrderDAOImpl is used process order.
+ * PurchaseOrderDAOImpl is used process order.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-22
  */
 
 public class PurchaseOrderDAOImpl extends BaseDAO implements PurchaseOrderDAO

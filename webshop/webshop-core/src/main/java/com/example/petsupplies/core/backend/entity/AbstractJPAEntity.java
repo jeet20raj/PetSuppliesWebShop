@@ -9,7 +9,10 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 /**
- * @author Jeetendra AbstractJPAEntity is used to have all the common columns
+ * AbstractJPAEntity is used to have all the common columns
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-09
  */
 @MappedSuperclass
 public class AbstractJPAEntity implements Serializable

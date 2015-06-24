@@ -6,7 +6,10 @@ import com.example.petsupplies.core.backend.entity.ProductEntity;
 import com.example.petsupplies.core.model.ProductSearchFilter;
 
 /**
- * @author Jeetendra ProductDAO exposing the methods to add/edit/delete/display the products.
+ * ProductDAO exposing the methods to add/edit/delete/display the products.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-11
  */
 
 public interface ProductDAO

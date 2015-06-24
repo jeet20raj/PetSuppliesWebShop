@@ -205,6 +205,8 @@ public class ShoppingCartBean implements Serializable
       orderEntity.setUserId(loggedInCustomer.getUserId());
       orderEntity.setAddressId(shippingAddress.getAddressId());
       orderSessionService.processOrder(orderEntity);
+      cartItems.clear();
+      itemsMap.clear();
       endConversation();
       logger.log(Level.INFO, "ShoppingCartBean :: placeOrder ends");
       return UserAppConstants.PAGE_VIEW_USER_HOME;

@@ -21,7 +21,10 @@ import com.example.petsupplies.core.common.constants.Constants;
 
 
 /**
- * @author Jeetendra ProductEntity is used to define all attributes related product.
+ * ProductEntity is used to define all attributes related product.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-09
  */
 
 @Entity

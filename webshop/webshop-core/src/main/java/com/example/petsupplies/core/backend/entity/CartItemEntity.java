@@ -13,7 +13,10 @@ import javax.persistence.Transient;
 import org.junit.Ignore;
 
 /**
- * @author Jeetendra CartItemEntity is used to define all attributes related to shopping cart items.
+ * CartItemEntity is used to define all attributes related to shopping cart items.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-19
  */
 
 @Entity
@@ -114,5 +117,26 @@ public class CartItemEntity extends AbstractJPAEntity
    {
       this.productPrice = productPrice;
    }
-
+   
+   public int hashCode()
+   {
+      return this.productName.hashCode()+ this.productPrice.intValue();
+   }
+   
+   public boolean equals(Object obj)
+   {
+      if (obj instanceof CartItemEntity)
+      {
+         CartItemEntity cartItemEntity = (CartItemEntity) obj;
+         if (cartItemEntity.getProductName().equals(this.getProductName()))
+         {
+            return true;
+         }
+      }
+      else
+      {
+         return false;
+      }
+      return false;
+   }
 }

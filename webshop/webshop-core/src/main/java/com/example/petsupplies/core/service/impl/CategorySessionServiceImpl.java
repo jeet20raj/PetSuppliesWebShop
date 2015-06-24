@@ -10,6 +10,13 @@ import com.example.petsupplies.core.backend.dao.CategoryDAO;
 import com.example.petsupplies.core.backend.entity.CategoryEntity;
 import com.example.petsupplies.core.service.CategorySessionService;
 
+/**
+ * CategorySessionServiceImpl is used to add/edit/display the categories.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-12
+ */
+
 @Stateless
 public class CategorySessionServiceImpl implements CategorySessionService, Serializable
 {

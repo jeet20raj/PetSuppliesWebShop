@@ -7,7 +7,12 @@ import com.example.petsupplies.core.backend.dao.UserDAO;
 import com.example.petsupplies.core.backend.entity.AddressEntity;
 import com.example.petsupplies.core.backend.entity.UserEntity;
 import com.example.petsupplies.core.service.UserSessionService;
-
+/**
+ * UserSessionServiceImpl is used to login and create user.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-12
+ */
 @Stateless
 public class UserSessionServiceImpl implements UserSessionService
 {

@@ -15,7 +15,10 @@ import com.example.petsupplies.core.common.constants.Constants;
 import com.example.petsupplies.core.model.ProductSearchFilter;
 
 /**
- * @author Jeetendra ProductDAOImpl is used add/edit/delete/display product
+ * ProductDAOImpl is used add/edit/delete/display product
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-15
  */
 
 public class ProductDAOImpl extends BaseDAO implements ProductDAO

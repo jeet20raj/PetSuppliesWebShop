@@ -3,6 +3,8 @@ package com.example.petsupplies.core.model;
 /**
  * ProductSearchFilter is having all the search parameters to filter products.
  * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-18
  */
 public class ProductSearchFilter
 {

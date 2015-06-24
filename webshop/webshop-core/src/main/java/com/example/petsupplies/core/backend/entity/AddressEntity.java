@@ -15,7 +15,10 @@ import javax.persistence.Table;
 import com.example.petsupplies.core.common.enums.AddressType;
 
 /**
- * @author Jeetendra AddressEntity is used to define all address related attributes.
+ * AddressEntity is used to define all address related attributes.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-09
  */
 
 @Entity

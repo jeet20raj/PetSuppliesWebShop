@@ -4,7 +4,10 @@ import com.example.petsupplies.core.backend.entity.AddressEntity;
 import com.example.petsupplies.core.backend.entity.UserEntity;
 
 /**
- * @author Jeetendra UserDAO exposing the method to login and create the user.
+ * UserDAO exposing the method to login and create the user.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-11
  */
 
 public interface UserDAO

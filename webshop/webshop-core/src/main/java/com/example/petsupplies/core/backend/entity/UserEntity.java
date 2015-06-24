@@ -18,7 +18,10 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.Type;
 
 /**
- * @author Jeetendra UserEntity is used to define all attributes related User.
+ * UserEntity is used to define all attributes related User.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-09
  */
 
 @SuppressWarnings("serial")

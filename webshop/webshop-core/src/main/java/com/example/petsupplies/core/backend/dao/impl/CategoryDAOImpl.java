@@ -14,7 +14,10 @@ import com.example.petsupplies.core.backend.entity.CategoryEntity;
 import com.example.petsupplies.core.common.constants.Constants;
 
 /**
- * @author Jeetendra CategoryDAOImpl is used to add/edit/delete category
+ * CategoryDAOImpl is used to add/edit/delete category
+ * @author Jeetendra 
+ * @version 1.0
+ * @since 2015-06-12
  */
 
 public class CategoryDAOImpl extends BaseDAO implements CategoryDAO

@@ -7,7 +7,13 @@ import javax.enterprise.inject.Produces;
 
 import com.example.petsupplies.core.backend.entity.UserEntity;
 import com.petsupplies.webshop.user.qualifiers.CustomerLoggedIn;
-
+/**
+ * BeanProducer produces logged in used to be injected in other class.
+ * 
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-22
+ */
 @SessionScoped
 public class BeanProducer implements Serializable
 {

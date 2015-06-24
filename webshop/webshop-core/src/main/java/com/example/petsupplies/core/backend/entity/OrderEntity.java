@@ -16,7 +16,10 @@ import javax.persistence.Table;
 import com.example.petsupplies.core.common.enums.Status;
 
 /**
- * @author Jeetendra OrderEntity is used to define all attributes related Purchase Order.
+ * OrderEntity is used to define all attributes related Purchase Order.
+ * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-22
  */
 
 @Entity

@@ -7,6 +7,8 @@ import com.example.petsupplies.core.backend.entity.CategoryEntity;
 /**
  * CategorySessionService is used expose methods to search/add/edit/delete categories.
  * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-12
  */
 
 public interface CategorySessionService

@@ -8,6 +8,8 @@ import com.example.petsupplies.core.model.ProductSearchFilter;
 /**
  * ProductSessionService is used expose methods to search/add/edit/delete products.
  * @author Jeetendra
+ * @version 1.0
+ * @since 2015-06-12
  */
 
 public interface ProductSessionService
