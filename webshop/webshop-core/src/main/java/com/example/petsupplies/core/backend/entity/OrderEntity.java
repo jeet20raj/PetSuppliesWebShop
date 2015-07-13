@@ -10,11 +10,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.example.petsupplies.core.common.constants.Constants;
 import com.example.petsupplies.core.common.enums.Status;
-
 /**
  * OrderEntity is used to define all attributes related Purchase Order.
  * @author Jeetendra
@@ -24,6 +26,9 @@ import com.example.petsupplies.core.common.enums.Status;
 
 @Entity
 @Table(name = "pruchase_orders")
+@NamedQueries({
+   @NamedQuery(name=Constants.QueryConstants.SHOW_ORDERS,query="Select new com.example.petsupplies.core.model.OrderVO(order.orderId,user.userName,order.status) from OrderEntity order, UserEntity user where order.userId=user.userId")
+})
 public class OrderEntity extends AbstractJPAEntity
 {
 

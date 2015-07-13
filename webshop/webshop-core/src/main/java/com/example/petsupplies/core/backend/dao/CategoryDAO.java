@@ -17,7 +17,6 @@ public interface CategoryDAO
 
    public boolean createCategory(CategoryEntity categoryEntity);
 
-   public boolean editCategory(CategoryEntity categoryEntity);
 
    public boolean deleteCategory(CategoryEntity categoryEntity);
 

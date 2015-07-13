@@ -1,6 +1,9 @@
 package com.example.petsupplies.core.service;
 
+import java.util.List;
+
 import com.example.petsupplies.core.backend.entity.OrderEntity;
+import com.example.petsupplies.core.model.OrderVO;
 
 /**
  * PurchaseOrderSessionService is used expose method to process order.
@@ -11,7 +14,7 @@ import com.example.petsupplies.core.backend.entity.OrderEntity;
 
 public interface PurchaseOrderSessionService
 {
-
-   public boolean processOrder(OrderEntity orderEntity);
-
+   boolean processOrder(OrderEntity orderEntity);
+   List<OrderVO> showOrders();
+   boolean editOrder(OrderEntity orderEntity);
 }

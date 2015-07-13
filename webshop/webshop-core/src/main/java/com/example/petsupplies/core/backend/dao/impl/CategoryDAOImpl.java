@@ -67,26 +67,6 @@ public class CategoryDAOImpl extends BaseDAO implements CategoryDAO
       return false;
    }
 
-   /**
-    * @param category
-    * @return boolean This method is used to edit the product category
-    */
-   public boolean editCategory(CategoryEntity categoryEntity)
-   {
-      logger.log(Level.INFO, "CategoryDAOImpl :: edit category method called");
-      try
-      {
-         CategoryEntity categoEntityInDB = entityManager.find(CategoryEntity.class, categoryEntity.getCategoryId());
-         entityManager.remove(categoEntityInDB);
-         return true;
-      }
-      catch (PersistenceException e)
-      {
-         logger.log(Level.SEVERE, "CategoryDAOImpl :: edit category ends with PersistenceException :: ", e);
-      }
-      return false;
-   }
-
    /*
     * (non-Javadoc) This method is doing soft delete for category using obsolete column
     */

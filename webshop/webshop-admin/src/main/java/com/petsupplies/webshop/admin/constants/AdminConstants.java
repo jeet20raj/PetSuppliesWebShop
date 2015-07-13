@@ -9,4 +9,5 @@ public interface AdminConstants
    String PAGE_VIEW_SHOW_PRODUCTS = "showProducts";
    String PAGE_VIEW_EDIT_PRODUCT = "editProduct";
    String PAGE_VIEW_ADD_PRODUCT = "addProduct";
+   String PAGE_VIEW_SHOW_ORDERS = "showOrders";
 }

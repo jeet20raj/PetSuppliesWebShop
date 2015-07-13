@@ -17,6 +17,7 @@ public interface Constants
       String FIND_CATEGORIES = "findCategories";
       String SHOW_ALL_PRODUCTS = "showAllProducts";
       String SEARCH_PRODUCTS = "searchProducts";
+      String SHOW_ORDERS = "showOrders";
    }
 
    String USER_ALREADY_EXISTS = "USER_ALREADY_EXISTS";
