@@ -35,14 +35,10 @@ public class CategoryDAOImpl extends BaseDAO implements CategoryDAO
       {
          return queryResults.getResultList();
       }
-      catch (NoResultException e)
-      {
-         logger.log(Level.SEVERE, "CategoryDAOImpl getCategories Method Ends With NoResultException :: ", e);
-
-      }
       catch (PersistenceException e)
       {
          logger.log(Level.SEVERE, "CategoryDAOImpl getCategories Method Ends With PersistenceException :: ", e);
+
       }
       return new ArrayList<CategoryEntity>();
    }

@@ -39,14 +39,10 @@ public class ProductDAOImpl extends BaseDAO implements ProductDAO
          searchQuery.setParameter("description", searchFilter.getDescription());
          return searchQuery.getResultList();
       }
-      catch (NoResultException e)
-      {
-         logger.log(Level.SEVERE, "ProductDAOImpl :: getAllProducts ends with NoResultException :: ", e);
-
-      }
       catch (PersistenceException ex)
       {
-         logger.log(Level.SEVERE, "ProductDAOImpl :: getAllProducts ends with PersistenceException :: ", ex);
+         logger.log(Level.SEVERE, "ProductDAOImpl :: getProducts ends with PersistenceException :: ", ex);
+
       }
       return new ArrayList<ProductEntity>();
    }
@@ -62,14 +58,10 @@ public class ProductDAOImpl extends BaseDAO implements ProductDAO
       {
          return queryResults.getResultList();
       }
-      catch (NoResultException e)
-      {
-         logger.log(Level.SEVERE, "ProductDAOImpl :: getAllProducts ends with NoResultException :: ", e);
-
-      }
       catch (PersistenceException ex)
       {
          logger.log(Level.SEVERE, "ProductDAOImpl :: getAllProducts ends with PersistenceException :: ", ex);
+
       }
       return new ArrayList<ProductEntity>();
    }
